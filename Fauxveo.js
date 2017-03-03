@@ -14,7 +14,7 @@ var AllLib = [];
 var SearchArray = [];
 //Facets users can filter by
 //Add 'Languages' to this array to enable, uncomment section in html
-var EnabledFacets = ['Agendas', 'Type', 'Topics', 'Regions'];
+var EnabledFacets = ['Language'];
 
 //initialization to set event handlers
 $(function(){
@@ -59,20 +59,19 @@ _.mixin({
 $.ajax({
     url: "Entries.json", 
     success: function (data, textStatus, jqXHR) {
-      console.log(data);
-        AllLib = JSON.parse(data);
+        AllLib = data;
 
-//         for (var i = 0; i < AllLib.length; i++) {
+        for (var i = 0; i < AllLib.length; i++) {
 //             AllLib[i].Date = mmddyyyyToDate(AllLib[i].Date);
 //             //Create arrays from semi-colon delimited lists
 //             AllLib[i].Agendas = AllLib[i].Agendas.split(";");
 //             AllLib[i].Regions = AllLib[i].Regions.split(";");
 //             AllLib[i].Topics = AllLib[i].Topics.split(";");
-//             AllLib[i].Languages = AllLib[i].Languages.split(";");
-//         }
-//         var facetsToRender = getApplicableFacets(AllLib);
-//         renderFacetInputs(facetsToRender);
-//         renderResultsArray(AllLib, "#Results");
+            AllLib[i].Language = AllLib[i].Language.split(",");
+        }
+        var facetsToRender = getApplicableFacets(AllLib);
+        renderFacetInputs(facetsToRender);
+        renderResultsArray(AllLib, "#Results");
     },
   error: function (jqXHR, textStatus, errorThrown){
     console.log("Error" + errorThrown);
@@ -87,11 +86,7 @@ function mmddyyyyToDate(dateString) {
 
 function getApplicableFacets(anArray) {
     var facetObj = {
-        Type: [],
-        Regions: [],
-        Topics: [],
-        Agendas: [],
-        Languages: []
+        Language: []
     }
 
     _.forEach(anArray, function (item, index) {
@@ -100,7 +95,7 @@ function getApplicableFacets(anArray) {
                 if (typeof (value) == "string") {
                     if (!_.includes(facetObj[key], value)) {
                         facetObj[key].push(value);
-                        //console.log("Pushed string " + value);
+                        console.log("Pushed string " + value);
                     }
                 }
                 //typeof will return 'object' for arrays!
@@ -108,7 +103,7 @@ function getApplicableFacets(anArray) {
                     _.forEach(value, function (item, index) {
                         if (!_.includes(facetObj[key], item)) {
                             facetObj[key].push(item);
-                            //console.log("Pushed array value " + item);
+//                             console.log("Pushed array value " + item);
                         }
                     });
                 }
@@ -138,7 +133,7 @@ function renderFacetInputs(aFacetObj) {
 function renderResultsArray(array, target) {
     $(target).empty();
     for (var i = 0; i < array.length; i++) {
-        $(target).append("<div class='libResult'><span class='facetDate'>" + array[i].Date.getFullYear() + "</span><a href='" + array[i].Link + "' target='_blank'><h2>" + array[i].Title + "</h2></a><p>" + array[i].Description + "</p></div>");
+        $(target).append("<div class='libResult'><a href='" + array[i].Link + "' target='_blank'><h2>" + array[i].Name + "</h2></a>Published: <span class='facetDate'>" + array[i].Year + "</span><p>" + array[i].MetaDescription + "</p></div>");
     }
 
     $('#count').html(array.length);
@@ -166,24 +161,25 @@ function filterBySearch(arrayToFilter, searchTerm) {
 
 function getAllFilters() {
     var facetObj = {
-        Type: [],
-        Regions: [],
-        Topics: [],
-        Agendas: [],
-        Languages: []
+//         Type: [],
+//         Regions: [],
+//         Topics: [],
+//         Agendas: [],
+        Language: []
     }
 
     //Add values of selected checkboxes to arrays stored in an object's property corresponding to the facet 
-    $("input[name='Type']:checked").each(function () { facetObj.Type.push(this.value) });
-    $("input[name='Regions']:checked").each(function () { facetObj.Regions.push(this.value) });
-    $("input[name='Topics']:checked").each(function () { facetObj.Topics.push(this.value) });
-    $("input[name='Agendas']:checked").each(function () { facetObj.Agendas.push(this.value) });
-    $("input[name='Languages']:checked").each(function () { facetObj.Languages.push(this.value) });
+//     $("input[name='Type']:checked").each(function () { facetObj.Type.push(this.value) });
+//     $("input[name='Regions']:checked").each(function () { facetObj.Regions.push(this.value) });
+//     $("input[name='Topics']:checked").each(function () { facetObj.Topics.push(this.value) });
+//     $("input[name='Agendas']:checked").each(function () { facetObj.Agendas.push(this.value) });
+    $("input[name='Language']:checked").each(function () { facetObj.Language.push(this.value) });
 
     return facetObj;
 }
 
 function applyFilters() {
+  console.log("Applyfilters is called");
     var facetObj = getAllFilters();
 
     var filteredArray = [];
@@ -196,6 +192,7 @@ function applyFilters() {
     }
 
     _.forOwn(facetObj, function (value, key) {
+      console.log(key, value);
         //If a facet thas no boxes checked, don't filter by that facet
         if (facetObj[key].length) {
             //Only one type per resource in library, use findByValues()
