@@ -1,4 +1,4 @@
-﻿//::::::::::   :::     :::    ::: :::    ::: :::     ::: ::::::::::  ::::::::  
+//::::::::::   :::     :::    ::: :::    ::: :::     ::: ::::::::::  ::::::::  
 //:+:        :+: :+:   :+:    :+: :+:    :+: :+:     :+: :+:        :+:    :+: 
 //+:+       +:+   +:+  +:+    +:+  +:+  +:+  +:+     +:+ +:+        +:+    +:+ 
 //:#::+::# +#++:++#++: +#+    +:+   +#++:+   +#+     +:+ +#++:++#   +#+    +:+ 
@@ -57,7 +57,7 @@ _.mixin({
 
 //get all items in library and render them
 $.ajax({
-    url: "/js/InroadsLibrary.js", 
+    url: "/js/Entries.json", 
     success: function (data, textStatus, jqXHR) {
         AllLib = JSON.parse(data);
 
@@ -143,8 +143,11 @@ function renderResultsArray(array, target) {
 function filterBySearch(arrayToFilter, searchTerm) {
     //if search term is in title or description - add to searchResults array
     SearchArray = _.filter(arrayToFilter, function (item) {
-        if (item.Description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
-            item.Title.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
+        if (item.Origin.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
+            item.Name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
+            item.Descriptors.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
+            item.MetaDescription.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 
+           ) {
             return true;
         } else {
             return false;
