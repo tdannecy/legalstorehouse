@@ -67,7 +67,7 @@ $.ajax({
 //             AllLib[i].Agendas = AllLib[i].Agendas.split(";");
 //             AllLib[i].Regions = AllLib[i].Regions.split(";");
 //             AllLib[i].Topics = AllLib[i].Topics.split(";");
-            AllLib[i].Language = AllLib[i].Language.split(",");
+            AllLib[i].Language = AllLib[i].Language.replace(/\s/g, '').split(",");
         }
         var facetsToRender = getApplicableFacets(AllLib);
         renderFacetInputs(facetsToRender);
@@ -113,7 +113,7 @@ function getApplicableFacets(anArray) {
             }
         });
     });
-
+    facetObj.Language = facetObj.Language.sort();
     return facetObj;
 }
 
@@ -132,6 +132,11 @@ function renderFacetInputs(aFacetObj) {
 //takes two args, array to render and jQuery selector where items should be rendered
 function renderResultsArray(array, target) {
     $(target).empty();
+  array.sort(function (a, b) {
+    var textA = a.Name.toUpperCase();
+    var textB = b.Name.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
     for (var i = 0; i < array.length; i++) {
         $(target).append("<div class='libResult'><a href='" + array[i].Link + "' target='_blank'><h2>" + array[i].Name + "</h2></a>Published: <span class='facetDate'>" + array[i].Year + "</span><p>" + array[i].MetaDescription + "</p></div>");
     }
