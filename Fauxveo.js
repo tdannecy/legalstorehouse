@@ -61,17 +61,17 @@ $.ajax({
     success: function (data, textStatus, jqXHR) {
         AllLib = JSON.parse(data);
 
-        for (var i = 0; i < AllLib.length; i++) {
-            AllLib[i].Date = mmddyyyyToDate(AllLib[i].Date);
-            //Create arrays from semi-colon delimited lists
-            AllLib[i].Agendas = AllLib[i].Agendas.split(";");
-            AllLib[i].Regions = AllLib[i].Regions.split(";");
-            AllLib[i].Topics = AllLib[i].Topics.split(";");
-            AllLib[i].Languages = AllLib[i].Languages.split(";");
-        }
-        var facetsToRender = getApplicableFacets(AllLib);
-        renderFacetInputs(facetsToRender);
-        renderResultsArray(AllLib, "#Results");
+//         for (var i = 0; i < AllLib.length; i++) {
+//             AllLib[i].Date = mmddyyyyToDate(AllLib[i].Date);
+//             //Create arrays from semi-colon delimited lists
+//             AllLib[i].Agendas = AllLib[i].Agendas.split(";");
+//             AllLib[i].Regions = AllLib[i].Regions.split(";");
+//             AllLib[i].Topics = AllLib[i].Topics.split(";");
+//             AllLib[i].Languages = AllLib[i].Languages.split(";");
+//         }
+//         var facetsToRender = getApplicableFacets(AllLib);
+//         renderFacetInputs(facetsToRender);
+//         renderResultsArray(AllLib, "#Results");
     }
 })
 
