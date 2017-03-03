@@ -57,8 +57,9 @@ _.mixin({
 
 //get all items in library and render them
 $.ajax({
-    url: "/js/Entries.json", 
+    url: "Entries.json", 
     success: function (data, textStatus, jqXHR) {
+      console.log(data);
         AllLib = JSON.parse(data);
 
 //         for (var i = 0; i < AllLib.length; i++) {
@@ -72,7 +73,10 @@ $.ajax({
 //         var facetsToRender = getApplicableFacets(AllLib);
 //         renderFacetInputs(facetsToRender);
 //         renderResultsArray(AllLib, "#Results");
-    }
+    },
+  error: function (jqXHR, textStatus, errorThrown){
+    console.log("Error" + errorThrown);
+  }
 })
 
 //convert mm/dd/yyyy strings to Date objects
