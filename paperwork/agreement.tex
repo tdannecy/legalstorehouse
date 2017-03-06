@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{soul} % Allows better underlining with \ul
+\usepackage{todonotes} % Allows me to add todo notes.
+\usepackage{setspace}
+% \usepackage{showframe}
+\newcommand*{\SignatureAndDate}[1]{%
+    \par\noindent\makebox[.70\textwidth]{\hrulefill}    \hfill\makebox[.25\textwidth]{\hrulefill}%
+    \par\noindent\makebox[.70\textwidth][l]{#1}         \hfill\makebox[.25\textwidth][l]{Date}%
+}%
+
+\usepackage[printwatermark]{xwatermark} % Adds ability to use a watermark.
+\usepackage{xcolor}
+\usepackage{graphicx,wrapfig} % Adds graphics tools.
+\newwatermark[allpages,color=red!50,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+
+% \usepackage{enumitem}
+\usepackage[margin=1.25in]{geometry}
+% \setlist{nolistsep}
+
+\begin{document}
+
+\section*{Field Experience Agreement}
+
+Founded in 1973, Ipas is a global nonprofit organization dedicated to improving women's health and protecting access to safe reproductive health services. Based out of Chapel Hill, North Carolina, the organization develops medical training and public policy recommendations for health institutions and government agencies around the world in coordination with fifteen country offices in Sub-Saharan Africa, Central and South America, and Asia. In addition to research and training, Ipas strives to provide legislative information to external organizations so that they can draft their own policy recommendations. To meet the latter institutional goal, Ipas maintains a digital collection of legal documents in a ``Legal Storehouse" to assist external organizations to write standards and guidelines for women's health care. Feedback from Ipas personnel and external users have reported that while it has been useful for meeting that goal, in its current state, the collection is difficult to navigate and is not currently searchable---all barriers to information retrieval.
+
+Over the next few weeks, Tim will work with the Library in coordination with Ipas' Communications and Policy departments to redesign the organization and presentation of the Legal Storehouse for external users, decrease the retrieval difficulty of these documents through search and metadata improvements, and create an organizational plan for long term maintenance of the collection. Broken up into stages, Tim will guide this vital project through conception, implementation, maintenance, and content governance. Throughout the semester, the student will participate in a variety of tasks to achieve these goals. Most importantly, Tim will gain experience in project management and will have the opportunity to coordinate between and receive feedback from several departments within a large organization---all of which are intangible skills not easily learned through traditional coursework.
+
+\subsection*{Learning Objectives}
+
+\begin{enumerate}
+    \item During this period, through first-hand experience, the student will \ul{become familiar with Sitecore and Coveo} to organize digital assets in a way that improves upon the institution’s current method of retrieval and display of digital content. The enterprise content management system and search platform are best in class technologies and used by Fortune 500 companies and other institutions with large public-facing websites.
+    \item The student will also gain first-hand experience working with metadata by tagging and using a controlled vocabulary for legal documents, providing an opportunity to work directly with the Library and Policy department to \ul{develop a taxonomy} needed for the project. 
+    \item This project will give the student an opportunity to \ul{plan logistics, actualize that plan, and bring a project to End of Life}, providing real-world experience in project planning and implementation. 
+    \item This Field Experience also will give the student an opportunity to \ul{develop a maintenance plan} with the site supervisor able to account for changes in law and potential changes to the enterprise content management system. The maintenance plan will not only address changes in law, but will be adaptive for personnel changes over time within the institution. 
+    \item In addition to this maintenance plan, the student will \ul{create an analytics plan} for this project, allocating time for follow up and evaluation of the data. The organization will be able to use this data to understand how people use the content and understand a course of action to take when applicable data suggests changes need to be made.
+\end{enumerate}
+\smallskip
+
+\noindent Tim's position of information architect will be embedded between three distinct departments within Ipas. Throughout the Field Experience, the student will report directly to Katrina Lee, the site supervisor and Digital Strategist for Ipas Communications. Additionally, Julia Cleaver, the Library manager, and senior policy advisor Patty Skuster will oversee the categorization and decision making process during the taxonomy creation phase. Tim will participate in weekly standing meetings with this team and will maintain constant contact with the Library team while working on the thesaurus for tagging. Over the course of the semester, the student will also be directly trained by digital communication and information science practitioners, reinforcing a sense of professional self-awareness and mentoring. 
+
+Much of the work can be divided into three distinct phases, throughout which the student will document all technical changes, comment any written code, and write procedural instructions and technical documentation to provide for other personnel to maintain the project going forward. In the first phase, the student will review the existing catalog of information and evaluate similar projects for applicable challenges and solutions. Throughout this phase, the student will maintain contact with the Policy department to ensure that the work remains relevant and that the project remains within the purview of the organization's scope of work. The second phase involves direct communication and planing between the Policy department and Library staff to determine a categorization system for the documents. The student will then develop a taxonomy so that the controlled vocabulary can be used in conjunction with traditional metadata and tagging. The primary stakeholders for this categorization may be associates with legal training, but the needs of general users will be met by collaborating across departments and taking feedback from personnel in the Communications department. The student will then apply the controlled vocabulary to the document metadata in Sitecore, creating the necessary changes to any applicable web-based forms used by Coveo---this phase will comprise the bulk of the work for the student's Field Experience. Upon completion of this phase, the improved web interface and the standardised document metadata will allow users to access the Legal Storehouse website using faceted search tools offered by Coveo. The improved taxonomy and controlled vocabulary will enable the enterprise search software to decrease information retrieval time and allow users to access the documents they seek. In the final phase of the project, the student will create a maintenance and analytics plan in order to facilitate future updates to the Legal Storehouse. With personnel changes in mind, Tim will need to draft these plans to include provisions for new personnel to understand the technical aspects of the system while remaining up to date on the institutional policy for data retention. The long-term sustainability of the Legal Storehouse relies on the organization's ability to update and, if needed, address changing organizational needs, regardless of personnel changes. 
+
+\vfill
+\SignatureAndDate{Student signature}%
+\vspace{2em}%
+\SignatureAndDate{Field Experience site supervisor signature}%
+
+\end{document}
