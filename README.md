@@ -17,7 +17,7 @@
     - [ ] Topics
     - [ ] DocumentSource
   - [ ] Citation popup/display
-  1. paperwork
-  - [ ] Update worklog to reflect changes over the past few weeks (as of 2017-03-06)
+1. paperwork
+  - [ ] Update worklog document to reflect changes over the past few weeks (as of 2017-03-06)
   - [ ] Create spreadsheet of work hours
   - [ ] Write 6-8 page reflection paper
