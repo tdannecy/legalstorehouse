@@ -8,3 +8,5 @@
 		"Note": "Longer note text"
 	}
 ] 
+
+This might work for a regex? ("Descriptors": )([^,]+(?=,),[^,]+(?=,))(,)([^,]+(?=,),[^,]+(?=,))
