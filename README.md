@@ -3,7 +3,7 @@
   - [X] Change language abbreviations to spelled-out words
   - [X] Cleanup Descriptor separators
   - [X] Remove unnecessary fields
-  - [ ] Convert Topics fields to a single array (see JSONexample.js)
+  - [X] Convert Topics fields to a single array (see JSONexample.js)
   - [ ] Add correct formatting to APACitation fields (basically just <em></em> tags)
   - [ ] Make sure escape characters are removed from entries.json
   
