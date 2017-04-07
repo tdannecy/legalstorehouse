@@ -1,26 +1,203 @@
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+  <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 -->
+  <link rel="stylesheet" type="text/css" href="http://www.ipas.org/Layouts/ipas/css/customCoveo/CustomFullSearch.css">
   <script src="http://www.endabortionstigma.org/js/lodash.min.js"></script>
-  <script src="Fauxveo.js"></script>
-  </head>
-<body>
-  <input type="text" id="search" />
-  <div class="facetBox">
-    <h2>
+
+  <!--   <script type="text/javascript" src="/redesign/lib/jquery-loader.js"></script> -->
+
+
+  <!-- CSS
+  ================================================== -->
+
+  <link rel="stylesheet" type="text/css" href="http://www.ipas.org/CSS/base.aspx" />
+  <link rel="stylesheet" type="text/css" href="http://www.ipas.org/CSS/layout2014.aspx" />
+  <link rel="stylesheet" type="text/css" href="http://www.ipas.org/CSS/mega-menu.aspx" />
+
+
+
+
+  <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+
+  <link rel="stylesheet" type="text/css" media="print" href="http://www.ipas.org/en/CSS/print.aspx" />
+
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5586637-3']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+
+    })();
+  </script>
+  <script type="text/javascript">
+    var path = (("https:" == document.location.protocol) ? "https://databroker.coremotives.com/databroker.js?version=2" : "http://cdn.coremotivesmarketing.com/databroker.js");
+    document.write(unescape("%3Cscript src='" + path + "' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var coreMotives = new DataBroker();
+      coreMotives.customerId = "436afb39-6d9c-e211-a906-00155d323f3c";
+      coreMotives.instanceId = 2300;
+      coreMotives.trackPageView();
+    } catch (e) {}
+  </script>
+  <meta name="pinterest" content="nopin" />
+  <link rel="canonical" href="http://www.ipas.org/en/Resources/Legal-Storehouse-Test.aspx" />
+</head>
+  
+  <div id="MainPanel">
+                <div id="coveo-center-column">
+                    
+
+<!-- When customizing this component, ensure to use "Coveo.$" instead of the regular jQuery "$" to
+     avoid any conflicts with Sitecore's Page Editor/Experience Editor.  -->
+
+
+<div>
+	
+    <link rel="stylesheet" href="http://ipas.org/Coveo/css/CoveoFullSearch.css" />
+    <link rel="stylesheet" href="http://ipas.org/Coveo/css/CoveoComponent.css" />
+    <link rel="stylesheet" href="http://ipas.org/Layouts/ipas/css/customCoveo/CustomFullSearch.css"  />
+
+    <script type="text/javascript" src="http://ipas.org/Coveo/js/CoveoJsSearch.WithDependencies.min.js"></script>
+    
+    <script type="text/javascript" src="http://ipas.org/Coveo/js/CoveoForSitecorePolyfills.js"></script>
+    <script type="text/javascript" src="http://ipas.org/Coveo/js/d3.min.js"></script>
+    <script type="text/javascript" src="http://ipas.org/Coveo/js/CoveoForSitecore.js"></script>
+
+    
+    <script type="text/javascript" src="http://ipas.org/Layouts/ipas/customCoveo/es.js"></script>
+
+    
+
+</div>
+
+
+
+
+
+    <div class="coveo-searchBox-column">
+      <div class="CoveoSearchBox" data-activate-omnibox="True" data-omnibox-delay="500">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="coveo-facet-header">
+    Refine Your Search
+  </div>
+    <div class="coveo-facet-column">
+      <div id="refineSearch" class="blueBox">
+        <span>Refine results</span>
+      </div>
+      <div id="sidebar">
+        <div class="facetBox">
+          <label class="facetTitle">Topics</label>
+          <div id="AgendasInputs"></div>
+        </div>
+        <div class="facetBox">
+          <label class="facetTitle">Language</label>
+          <div id="LanguageInputs"></div>
+        </div>
+        <div class="facetBox">
+          <label class="facetTitle">Regions</label>
+          <div id="RegionsInputs"></div>
+        </div>
+
+
+        <div class="facetBox">
+          <label class="facetTitle">Type of Content</label>
+          <div id="TypeInputs">
+
+          </div>
+        </div>
+
+
+
+      </div>
+      <!--Sidebar-->
+    </div>
+    <!--Left Column-->
+
+<div class="coveo-results-section">
+
+  <div class="coveo-results-column float-right">
+    <div id="content">
+      <div id="searchDiv">
+        <input id="search" type="text" name="search" value="" placeholder="enter term to start a new search" />
+      </div>
+      <input class="blueBox" id="searchBtn" name="name" value="SEARCH" />
+
+      <div id="sortBox"></div>
+      <div id="numAndTags">
+        <div>
+          <span id="count"></span>&nbsp;results<span id="countCopy"></span>
+        </div>
+        <div id="facetTags"></div>
+      </div>
+      <br style="clear:both;" />
+
+      <div id="Results"></div>
+    </div>
+
+
+    <script src="Fauxveo.js"></script>
+  </div>
+
+<div id="Results">
+
+
+
+
+
+<!--     <input type="text" id="search" />
+    <div class="facetBox">
+      <h2>
     Languages
   </h2>
-  <div id="LanguageInputs"></div>
-  </div>
-  <p>
-    Results: <span id="count"></span>
-  </p>
-  <div id="Results">
+      <div id="LanguageInputs"></div>
+    </div>
+    <p>
+      Results: <span id="count"></span>
+    </p>
     
+    
+
+    </div> -->
+  
+  
+    <div class="container" id="footer">
+  <div class="sixteen columns">
+    <div class="footer-contents">
+      <p id="footer_0_footerText"><a href="/en/Pages/Contact-Us.aspx">Contact Us</a> <a href="https://jobs-ipas.icims.com/jobs/intro">Jobs</a> <a href="/en/Pages/Site-Map.aspx">Site Map</a> <a href="/en/Pages/Privacy-Content-and-Copyright-Policies.aspx">Privacy, Content and Copyright Policies</a>        <a href="http://www.ipas.org/en/What-We-Do/Comprehensive-Abortion-Care/Elements-of-Comprehensive-Abortion-Care/MVA/MVA-Products.aspx" title="MVA Products">MVA Products</a> &copy; 1998-<span id="demo"></span><strong> Ipas.</strong> All rights reserved.
+        <script>
+          var currentTime = new Date()
+          var year = currentTime.getFullYear()
+          document.getElementById("demo").innerHTML = year;
+        </script>
+      </p>
+    </div>
   </div>
-</body>
+</div>
+                  </div></div></div>
+
+  </body>
+
 </html>
